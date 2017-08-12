@@ -1,8 +1,3 @@
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
-source "$HOME/.nvm/nvm.sh"
-nvm install lts/*
-nvm use lts/*
-npm install -g npm@latest
 npm install -g yarn
 yarn global add yo
 yarn global add mocha
