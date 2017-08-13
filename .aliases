@@ -1,6 +1,6 @@
 # Window Executables
-alias docker="docker.exe"
-alias docker-compose="docker-compose.exe"
+#alias docker="docker.exe"
+#alias docker-compose="docker-compose.exe"
 
 # Shortcuts
 alias d="cd ~/Documents/Dropbox"
