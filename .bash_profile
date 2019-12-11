@@ -7,6 +7,7 @@ PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
         [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
+
 unset file;
 
 # Case-insensitive globbing (used in pathname expansion)
@@ -44,3 +45,4 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 UIServer Terminal Twitter" killall;
 
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
+#[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn

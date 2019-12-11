@@ -8,3 +8,4 @@ yarn global add azure-cli
 yarn global add protractor
 yarn global add karma-cli
 yarn global add eslint
+yarn global add dps-keygen

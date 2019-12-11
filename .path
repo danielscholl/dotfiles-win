@@ -1,2 +1,3 @@
 export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 export PATH="$HOME/.n/bin:$PATH"  # Add Node Version Manager to PATH
+export PATH="$HOME/.local/bin:/mnt/c/Program\ Files/Docker/Docker/resources/bin\:$PATH"  # Add Docker Executables to Path

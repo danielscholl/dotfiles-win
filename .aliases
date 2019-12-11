@@ -3,9 +3,8 @@
 #alias docker-compose="docker-compose.exe"
 
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
+alias ds="cd /c/Users/degno/source/iot"
+alias di="cd /c/Users/degno/source/iotedge"
 alias g="git"
 alias h="history"
 alias j="jobs"
@@ -69,12 +68,17 @@ alias dclean='docker rm -v $(docker ps -a -q -f status=exited)'
 alias rmc='docker ps -q -a | xargs docker rm -f'
 alias rmi='docker images -q | xargs docker rmi -f'
 alias d='docker $@'
+#alias docker='docker.exe'
+#alias docker-machine='docker-machine.exe'
+#alias docker-compose='docker-compose.exe'
 
+alias registry-start='docker run -d -p 5000:5000 --name registry -v /c/users/degno/registry:/var/lib/registry --restart always registry:2'
 alias registry-stop='docker rm -f registry'
 alias registry-web='docker run -d -p 8000:80 --name registry-web --link registry -e ENV_DOCKER_REGISTRY_HOST=registry -e ENV_DOCKER_REGISTRY_PORT=5000 konradkleine/docker-registry-frontend:v2'
 
 #MONGO
-alias mongo-start="docker run -it -d -p 27017:27017 --name mongo mongo mongod --rest --httpinterface --smallfiles"
+alias mongo-start="docker run -d -p 27017-27019:27017-27019 --name mongo mongo mongod --bind_ip 127.0.0.1" 
+#alias mongo-start="docker run -d -p 27017-27019:27017-27019 --name mongo mongo mongod --rest --httpinterface --smallfiles"
 alias mongo-admin="docker run -d --link mongo:mongo -p 8081:8081 mongo-express"
 alias mongo-stop="docker rm -f mongo"
 alias mongodb="docker logs -f mongo"
@@ -99,3 +103,8 @@ alias psql-cli="PGPASSWORD=password psql -h docker -p 5432 -U postgres -w $@"
 
 #AZURE
 alias azure-serviceprincipaL="az ad user show --upn $(az account show --query user.name -otsv) --query objectId -otsv"
+
+#IOT
+alias iotedgedev="docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /c/users/degno/source/iotedge:/home/iotedge microsoft/iotedgedev"
+alias iotdevicestate="az iot hub device-identity show --device-id $D -g $RG -n $HUB --query connectionState -otsv"
+alias ioteventmonitor="az iot hub monitor-events -d $D -n $HUB"
