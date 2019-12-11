@@ -5,7 +5,7 @@
 # Shortcuts
 alias ds="cd /c/Users/degno/source/iot"
 alias di="cd /c/Users/degno/source/iotedge"
-alias g="git"
+#alias g="git"
 alias h="history"
 alias j="jobs"
 alias github="cd ~/Source/github"

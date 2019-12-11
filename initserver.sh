@@ -1,7 +1,7 @@
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get autoremove -y
-sudo apt-get install -y apt-transport-https ca-certificates software-properties-common curl wget
+sudo apt-get install -y apt-transport-https ca-certificates software-properties-common curl wget unzip
 sudo apt-get update && apt-get install -y libssl-dev libffi-dev python-dev build-essential
 sudo apt-get install -y ansible
 
@@ -37,6 +37,9 @@ sudo dpkg -i packages-microsoft-prod.deb
 sudo apt update
 sudo apt -y install powershell
 
+
+# Install g Golang Version Manager
+curl -sSL https://git.io/g-install | sh -s
 
 # Install Homebrew
 # sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
